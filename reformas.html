@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reformas y homologación de vehículos — JP Ingeniería y Peritaciones</title>
+<meta name="description" content="Proyectos técnicos para la homologación de reformas de vehículos: suspensión, escape, llantas, defensas, enganche, camperización, gas y motor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <ul>
+      <li>Ingenieros técnicos y peritos con experiencia mecánica</li>
+      <li>Informe en un máximo de 10 días</li>
+      <li>Cataluña · Valencia · Murcia · Madrid · Asturias · Galicia</li>
+    </ul>
+    <div><a href="index.html#contacto">Cuéntanos tu caso →</a></div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav-inner">
+    <div class="brand">
+      <a href="index.html" style="display:flex;align-items:center;gap:10px;color:inherit;">
+        <div class="mark">JP</div>
+        <div>JP Ingeniería<br><small>y Peritaciones</small></div>
+      </a>
+    </div>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+        <li><a href="index.html#servicios">Servicios periciales</a></li>
+        <li><a href="index.html#ejemplos">Ejemplos</a></li>
+        <li><a href="index.html#cobertura">Cobertura</a></li>
+        <li><a href="reformas.html">Reformas</a></li>
+      </ul>
+    </nav>
+    <a href="index.html#contacto" class="nav-cta">Contactar</a>
+  </div>
+</header>
+
+<section class="section section-alt" id="reformas-vehiculos">
+  <div class="wrap">
+    <div class="eyebrow">Reformas y homologación (próximamente)</div>
+    <div class="section-head">
+      <h2>Cuéntanos tu reforma, tipo por tipo</h2>
+      <p>Selecciona la tipología de reforma y rellena solo los campos que le afectan. Con estos datos y las fotos que nos envíes, preparamos la documentación técnica necesaria para tu homologación.</p>
+    </div>
+
+    <div class="contact-card" style="margin-bottom:32px;">
+      <label for="tipo-reforma" style="display:block;font-size:12.5px;font-weight:700;color:var(--muted);margin-bottom:8px;">Tipo de reforma</label>
+      <select id="tipo-reforma" onchange="mostrarCamposReforma()" style="width:100%;background:var(--bg);border:1.5px solid var(--line);color:var(--ink);padding:12px 14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;border-radius:10px;">
+        <option value="">— Selecciona una tipología —</option>
+        <option value="suspension">Suspensión (elevación / rebaje)</option>
+        <option value="escape">Escape / doble salida</option>
+        <option value="llantas">Llantas y neumáticos</option>
+        <option value="defensas">Defensas, barras y protecciones</option>
+        <option value="enganche">Enganche de remolque</option>
+        <option value="camper">Camperización / vivienda</option>
+        <option value="gas">Instalación de gas (GLP/GNC)</option>
+        <option value="motor">Motor y transmisión</option>
+      </select>
+    </div>
+
+    <!-- FAQ de reformas y homologación -->
+    <div style="margin-bottom:40px;">
+      <h3 style="font-size:15px;color:var(--blue);margin-bottom:16px;">Preguntas frecuentes sobre reformas y homologación</h3>
+      <details class="faq-item">
+        <summary class="faq-q">¿Cuánto cuesta homologar una reforma?<span class="plus">+</span></summary>
+        <div class="faq-a">Depende del tipo de reforma y de su complejidad: no cuesta lo mismo homologar unos separadores que una camperización completa. Cada caso se presupuesta de forma individual.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">¿Cuál es el proceso completo?<span class="plus">+</span></summary>
+        <div class="faq-a">Primero valoramos si la reforma es homologable. Después, con la modificación ya realizada en un taller autorizado, preparamos el proyecto técnico, gestionamos el informe de conformidad con el laboratorio acreditado, y con toda la documentación en regla solo queda pasar la revisión de reforma en la ITV.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">¿Cuánto tarda el proceso?<span class="plus">+</span></summary>
+        <div class="faq-a">Una vez recibida toda la documentación necesaria, el plazo máximo es de 10 días. En reformas sencillas suele resolverse antes.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">¿Todas las modificaciones necesitan homologación?<span class="plus">+</span></summary>
+        <div class="faq-a">No. Solo las que alteran las características originales del vehículo y afectan a su seguridad o legalidad: enganches, suspensiones, cambios de neumático no equivalentes, variación de vías, instalaciones de gas, etc. Cambios como embellecedores o pintura normalmente no la requieren.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">¿Qué documentos necesito aportar?<span class="plus">+</span></summary>
+        <div class="faq-a">Ficha técnica, permiso de circulación y certificado del taller que ha realizado la reforma, junto con fotos generales del vehículo (frontal, trasera, laterales) y fotos detalladas de los elementos modificados, mostrando su ubicación y anclaje.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">¿Qué pasa si el vehículo no supera la revisión de reforma en la ITV?<span class="plus">+</span></summary>
+        <div class="faq-a">Revisamos con vosotros qué ha fallado y, si el motivo está relacionado con la documentación que hemos preparado, lo corregimos sin coste adicional para volver a presentarlo.</div>
+      </details>
+    </div>
+
+    <form class="contact-form" style="max-width:100%;">
+
+      <!-- Bloque común a toda reforma -->
+      <h3 style="font-size:15px;color:var(--blue);margin-bottom:14px;">Datos personales</h3>
+      <label for="rf-nombre">Nombre y apellidos</label>
+      <input id="rf-nombre" name="rf-nombre" type="text">
+      <label for="rf-email">Email</label>
+      <input id="rf-email" name="rf-email" type="email">
+      <label for="rf-telefono">Teléfono</label>
+      <input id="rf-telefono" name="rf-telefono" type="tel">
+
+      <h3 style="font-size:15px;color:var(--blue);margin:26px 0 14px;">Datos del vehículo</h3>
+      <label for="rf-marca">Marca y modelo</label>
+      <input id="rf-marca" name="rf-marca" type="text">
+      <label for="rf-matricula">Matrícula</label>
+      <input id="rf-matricula" name="rf-matricula" type="text">
+      <label for="rf-bastidor">Nº de bastidor (VIN)</label>
+      <input id="rf-bastidor" name="rf-bastidor" type="text">
+
+      <!-- Campos dinámicos por tipología -->
+      <div id="campos-suspension" class="campos-reforma" style="display:none;">
+        <h3 style="font-size:15px;color:var(--blue);margin:26px 0 14px;">Medidas afectadas — Suspensión</h3>
+        <label for="susp-tipo">Tipo de modificación</label>
+        <select id="susp-tipo" style="width:100%;background:var(--bg);border:1.5px solid var(--line);padding:12px 14px;border-radius:10px;margin-bottom:18px;">
+          <option>Elevación</option><option>Rebaje</option>
+        </select>
+        <label for="susp-altura">Variación de altura (mm)</label>
+        <input id="susp-altura" type="text" placeholder="Ej. +40 mm">
+        <label for="susp-neumatico">Medida de neumático instalado</label>
+        <input id="susp-neumatico" type="text" placeholder="Ej. 265/70 R17">
+        <label for="susp-marca-kit">Marca y modelo del kit de suspensión</label>
+        <input id="susp-marca-kit" type="text">
+      </div>
+
+      <div id="campos-escape" class="campos-reforma" style="display:none;">
+        <h3 style="font-size:15px;color:var(--blue);margin:26px 0 14px;">Medidas afectadas — Escape</h3>
+        <label for="esc-tipo">Tipo de escape instalado</label>
+        <input id="esc-tipo" type="text" placeholder="Ej. línea deportiva, doble salida">
+        <label for="esc-marca">Marca y referencia del escape</label>
+        <input id="esc-marca" type="text">
+        <label for="esc-homologado">¿El escape tiene homologación europea (e-mark)?</label>
+        <select id="esc-homologado" style="width:100%;background:var(--bg);border:1.5px solid var(--line);padding:12px 14px;border-radius:10px;margin-bottom:18px;">
+          <option>Sí</option><option>No</option><option>No lo sé</option>
+        </select>
+      </div>
+
+      <div id="campos-llantas" class="campos-reforma" style="display:none;">
+        <h3 style="font-size:15px;color:var(--blue);margin:26px 0 14px;">Medidas afectadas — Llantas y neumáticos</h3>
+        <label for="ll-medida-original">Medida original de fábrica</label>
+        <input id="ll-medida-original" type="text" placeholder="Ej. 205/55 R16">
+        <label for="ll-medida-nueva">Medida instalada</label>
+        <input id="ll-medida-nueva" type="text" placeholder="Ej. 225/45 R18">
+        <label for="ll-sobresale">¿La llanta o neumático sobresale de la carrocería?</label>
+        <select id="ll-sobresale" style="width:100%;background:var(--bg);border:1.5px solid var(--line);padding:12px 14px;border-radius:10px;margin-bottom:18px;">
+          <option>No</option><option>Sí</option><option>No lo sé</option>
+        </select>
+      </div>
+
+      <div id="campos-defensas" class="campos-reforma" style="display:none;">
+        <h3 style="font-size:15px;color:var(--blue);margin:26px 0 14px;">Datos de la reforma — Defensas y protecciones</h3>
+        <label for="def-tipo">Elemento instalado</label>
+        <input id="def-tipo" type="text" placeholder="Ej. defensa delantera, barra led, portaequipajes">
+        <label for="def-marca">Marca y referencia</label>
+        <input id="def-marca" type="text">
+        <label for="def-material">Material</label>
+        <input id="def-material" type="text" placeholder="Ej. acero, aluminio">
+      </div>
+
+      <div id="campos-enganche" class="campos-reforma" style="display:none;">
+        <h3 style="font-size:15px;color:var(--blue);margin:26px 0 14px;">Datos de la reforma — Enganche de remolque</h3>
+        <label for="eng-tipo">Tipo de enganche</label>
+        <select id="eng-tipo" style="width:100%;background:var(--bg);border:1.5px solid var(--line);padding:12px 14px;border-radius:10px;margin-bottom:18px;">
+          <option>Fijo</option><option>Desmontable</option><option>Plegable/abatible</option>
+        </select>
+        <label for="eng-marca">Marca y referencia del enganche</label>
+        <input id="eng-marca" type="text">
+        <label for="eng-carga">Masa máxima remolcable (kg)</label>
+        <input id="eng-carga" type="text">
+      </div>
+
+      <div id="campos-camper" class="campos-reforma" style="display:none;">
+        <h3 style="font-size:15px;color:var(--blue);margin:26px 0 14px;">Datos de la reforma — Camperización / vivienda</h3>
+        <label for="cam-alcance">Alcance de la reforma</label>
+        <select id="cam-alcance" style="width:100%;background:var(--bg);border:1.5px solid var(--line);padding:12px 14px;border-radius:10px;margin-bottom:18px;">
+          <option>Básica (cama/mueble)</option><option>Completa (interior + instalaciones)</option>
+        </select>
+        <label for="cam-instalaciones">Instalaciones incluidas</label>
+        <input id="cam-instalaciones" type="text" placeholder="Ej. eléctrica, agua, gas, placa solar">
+        <label for="cam-plazas">¿Se modifican las plazas homologadas?</label>
+        <select id="cam-plazas" style="width:100%;background:var(--bg);border:1.5px solid var(--line);padding:12px 14px;border-radius:10px;margin-bottom:18px;">
+          <option>No</option><option>Sí</option>
+        </select>
+      </div>
+
+      <div id="campos-gas" class="campos-reforma" style="display:none;">
+        <h3 style="font-size:15px;color:var(--blue);margin:26px 0 14px;">Datos de la reforma — Instalación de gas</h3>
+        <label for="gas-tipo">Tipo de instalación</label>
+        <select id="gas-tipo" style="width:100%;background:var(--bg);border:1.5px solid var(--line);padding:12px 14px;border-radius:10px;margin-bottom:18px;">
+          <option>GLP (autogas)</option><option>GNC</option>
+        </select>
+        <label for="gas-deposito">Ubicación del depósito</label>
+        <input id="gas-deposito" type="text" placeholder="Ej. maletero, bajo chasis, rueda de repuesto">
+        <label for="gas-instalador">Instalador / taller certificado</label>
+        <input id="gas-instalador" type="text">
+      </div>
+
+      <div id="campos-motor" class="campos-reforma" style="display:none;">
+        <h3 style="font-size:15px;color:var(--blue);margin:26px 0 14px;">Datos de la reforma — Motor y transmisión</h3>
+        <label for="mot-tipo">Tipo de modificación</label>
+        <input id="mot-tipo" type="text" placeholder="Ej. reprogramación, cambio de turbo, admisión">
+        <label for="mot-potencia-original">Potencia original (CV)</label>
+        <input id="mot-potencia-original" type="text">
+        <label for="mot-potencia-nueva">Potencia tras la reforma (CV)</label>
+        <input id="mot-potencia-nueva" type="text">
+      </div>
+
+      <h3 style="font-size:15px;color:var(--blue);margin:26px 0 14px;">Datos del taller</h3>
+      <label for="rf-taller-nombre">Nombre del taller</label>
+      <input id="rf-taller-nombre" type="text">
+      <label for="rf-taller-direccion">Dirección del taller</label>
+      <input id="rf-taller-direccion" type="text">
+
+      <h3 style="font-size:15px;color:var(--blue);margin:26px 0 14px;">Fotografías</h3>
+      <label for="rf-foto-delantera">Foto del vehículo — parte delantera</label>
+      <input id="rf-foto-delantera" type="file" accept="image/*">
+      <label for="rf-foto-trasera">Foto del vehículo — parte trasera</label>
+      <input id="rf-foto-trasera" type="file" accept="image/*">
+      <label for="rf-foto-accesorio">Foto del accesorio instalado</label>
+      <input id="rf-foto-accesorio" type="file" accept="image/*" multiple>
+
+      <button type="button" disabled style="opacity:0.5;cursor:not-allowed;">Enviar expediente (pendiente de backend)</button>
+    </form>
+  </div>
+</section>
+
+<script>
+  function mostrarCamposReforma(){
+    document.querySelectorAll('.campos-reforma').forEach(function(el){ el.style.display = 'none'; });
+    var tipo = document.getElementById('tipo-reforma').value;
+    if(tipo){
+      var bloque = document.getElementById('campos-' + tipo);
+      if(bloque) bloque.style.display = 'block';
+    }
+  }
+</script>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><div class="mark" style="background:#2454C7;">JP</div>JP Ingeniería y Peritaciones</div>
+        <p>Perito independiente de vehículos: vicios ocultos, garantías, pérdida total y defectos de fábrica. También reformas y homologación de vehículos.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios periciales</h4>
+        <ul>
+          <li><a href="index.html#servicios">Vicios ocultos</a></li>
+          <li><a href="index.html#servicios">Pérdida total</a></li>
+          <li><a href="index.html#servicios">Nombramiento de perito</a></li>
+          <li><a href="index.html#servicios">Reclamación al taller</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Reformas</h4>
+        <ul>
+          <li><a href="reformas.html">Tipos de reforma</a></li>
+          <li><a href="reformas.html#reformas-vehiculos">Solicitar homologación</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+          <li><a href="index.html#ejemplos">Ejemplos de informes</a></li>
+          <li><a href="index.html#cobertura">Cobertura</a></li>
+          <li><a href="index.html#contacto">Solicitar consulta</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="aviso-legal.html">Aviso legal</a></li>
+          <li><a href="privacidad.html">Política de privacidad</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span id="year"></span> JP Ingeniería y Peritaciones</div>
+      <div>Perito de valoración de vehículos</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
