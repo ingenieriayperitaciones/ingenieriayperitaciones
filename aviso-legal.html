@@ -26,14 +26,14 @@
 <header>
   <div class="wrap nav-inner">
     <div class="brand">
-      <a href="index.html" style="display:flex;align-items:center;gap:10px;color:inherit;">
+      <a href="index.html" style="display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;">
         <div class="mark">JP</div>
         <div>JP Ingeniería<br><small>y Peritaciones</small></div>
       </a>
     </div>
     <nav aria-label="Navegación principal">
       <ul>
-        <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+        <li><a href="acerca-de.html">Equipo</a></li>
         <li><a href="index.html#servicios">Servicios periciales</a></li>
         <li><a href="index.html#ejemplos">Ejemplos</a></li>
         <li><a href="index.html#cobertura">Cobertura</a></li>
@@ -41,7 +41,11 @@
       </ul>
     </nav>
     <a href="index.html#contacto" class="nav-cta">Contactar</a>
-  </div>
+
+    <button class="burger" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    </div>
 </header>
 
 <section class="section" id="aviso-legal">
@@ -58,7 +62,7 @@
         Titular: Joan Peñalver Hill<br>
         Dirección: C/ Germanor S/N, 08720 Vilafranca del Penedès<br>
         Email: phpericial@gmail.com<br>
-        Teléfono: [Tu teléfono]<span class="placeholder-flag">PENDIENTE</span>
+        Teléfono: 620 60 87 98
       </p>
       <p style="margin-bottom:16px;"><strong>2. Objeto</strong></p>
       <p style="margin-bottom:16px;color:var(--muted);">Esta web ofrece información sobre servicios de ingeniería y peritaje de vehículos.</p>
@@ -73,7 +77,6 @@
     </div>
   </div>
 </section>
-
 <footer>
   <div class="wrap">
     <div class="footer-grid">
@@ -100,10 +103,10 @@
       <div class="footer-col">
         <h4>Empresa</h4>
         <ul>
-          <li><a href="index.html#sobre-mi">Sobre mí</a></li>
           <li><a href="index.html#ejemplos">Ejemplos de informes</a></li>
           <li><a href="index.html#cobertura">Cobertura</a></li>
           <li><a href="index.html#contacto">Solicitar consulta</a></li>
+          <li><a href="acerca-de.html">Acerca de</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -125,5 +128,6 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
+<script src="site.js"></script>
 </body>
 </html>
