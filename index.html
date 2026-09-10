@@ -331,7 +331,12 @@
           <span class="value">En menos de 24-48h laborables</span>
         </div>
       </div>
-      <form class="contact-form" action="mailto:phpericial@gmail.com" method="post" enctype="text/plain">
+      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="38b1b18d-a95d-4339-b1c9-cb35e2d22700">
+        <input type="hidden" name="subject" value="Nueva consulta desde ingenieriayperitaciones.com">
+        <input type="hidden" name="from_name" value="JP Ingeniería y Peritaciones — Web">
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+
         <label for="asunto">Tipo de caso</label>
         <select id="asunto" name="asunto" style="width:100%;background:var(--bg);border:1.5px solid var(--line);color:var(--ink);padding:12px 14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;margin-bottom:18px;border-radius:10px;">
           <option>Vicios ocultos</option>
@@ -384,10 +389,42 @@
         <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
 
         <button type="submit">Enviar consulta</button>
+        <p id="form-status" style="margin-top:14px;font-size:14px;"></p>
       </form>
     </div>
   </div>
 </section>
+
+<script>
+  (function(){
+    var form = document.querySelector('.contact-form');
+    if(!form) return;
+    var status = document.getElementById('form-status');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      status.textContent = 'Enviando...';
+      status.style.color = 'var(--muted)';
+      var data = new FormData(form);
+      fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+        .then(function(res){ return res.json(); })
+        .then(function(json){
+          if(json.success){
+            status.textContent = '¡Gracias! Hemos recibido tu consulta y te responderemos en menos de 24-48h laborables.';
+            status.style.color = '#1a7f37';
+            form.reset();
+          } else {
+            status.textContent = 'No se ha podido enviar. Escríbenos directamente a phpericial@gmail.com.';
+            status.style.color = '#c0392b';
+          }
+        })
+        .catch(function(){
+          status.textContent = 'No se ha podido enviar. Escríbenos directamente a phpericial@gmail.com.';
+          status.style.color = '#c0392b';
+        });
+    });
+  })();
+</script>
+
 
 <footer>
   <div class="wrap">
