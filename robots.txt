@@ -1,0 +1,35 @@
+# JP Ingeniería y Peritaciones — robots.txt
+# Se permite el acceso a todos los rastreadores, incluidos los de motores de IA.
+
+User-agent: *
+Allow: /
+
+# Rastreadores de motores de IA (ChatGPT, Google AI Overviews/Gemini, Perplexity, Claude)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://ingenieriayperitaciones.com/sitemap.xml
