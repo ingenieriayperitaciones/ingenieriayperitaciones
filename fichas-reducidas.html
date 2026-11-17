@@ -103,7 +103,17 @@
       </fieldset>
 
       <fieldset>
-        <legend>2. Datos del titular</legend>
+        <legend>2. Tipo de vehículo</legend>
+        <label class="fr-check" style="color:var(--ink);"><input type="radio" name="tipo_vehiculo" value="Europeo (con contraseña de homologación)" checked><span><strong>Europeo</strong>, con contraseña de homologación (matriculado en España)</span></label>
+        <label class="fr-check" style="color:var(--ink);"><input type="radio" name="tipo_vehiculo" value="Importado"><span><strong>Importado</strong> (matriculado en otro país)</span></label>
+        <label for="motivo_sol" style="margin-top:14px;">Motivo de la solicitud</label>
+        <select id="motivo_sol" name="motivo_solicitud">
+          <option>Importación</option><option>Reforma / homologación</option><option>Traslado de residencia del titular</option><option>Otros</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. Datos del titular</legend>
         <div class="fr-row">
           <div><label for="nombre">Nombre y apellidos</label><input id="nombre" name="nombre" type="text" required autocomplete="name"></div>
           <div><label for="dni">DNI / NIE / CIF</label><input id="dni" name="dni" type="text" required></div>
@@ -117,7 +127,7 @@
       </fieldset>
 
       <fieldset>
-        <legend>3. Datos del vehículo</legend>
+        <legend>4. Datos del vehículo</legend>
         <div class="fr-row">
           <div><label for="matricula">Matrícula</label><input id="matricula" name="matricula" type="text" required></div>
           <div><label for="bastidor">Nº de bastidor (VIN)</label><input id="bastidor" name="bastidor" type="text" required></div>
@@ -126,26 +136,64 @@
           <div><label for="marca">Marca</label><input id="marca" name="marca" type="text" required></div>
           <div><label for="modelo">Modelo y versión</label><input id="modelo" name="modelo" type="text" required></div>
         </div>
-        <label for="motivo">¿Para qué la necesitas? (reforma, ITV, importación…)</label>
+        <div class="fr-row">
+          <div><label for="neumaticos">Neumáticos montados (medida)</label><input id="neumaticos" name="neumaticos" type="text" placeholder="Ej. 205/55 R16"></div>
+          <div><label for="caja">Caja de cambios</label><select id="caja" name="caja_cambios"><option>Manual</option><option>Automática</option></select></div>
+        </div>
+        <label for="provincia_itv">Provincia donde pasará la ITV</label>
+        <input id="provincia_itv" name="provincia_itv" type="text">
+
+        <label style="margin-top:6px;">Dispositivos de alumbrado que lleva (marca los que correspondan)</label>
+        <label class="fr-check"><input type="checkbox" name="luces[]" value="Luces diurnas"><span>Luces diurnas</span></label>
+        <label class="fr-check"><input type="checkbox" name="luces[]" value="Antiniebla delanteras"><span>Luces antiniebla delanteras</span></label>
+        <label class="fr-check"><input type="checkbox" name="luces[]" value="1 antiniebla trasera"><span>1 única luz antiniebla trasera</span></label>
+        <label class="fr-check"><input type="checkbox" name="luces[]" value="2 antiniebla traseras"><span>2 luces antiniebla traseras</span></label>
+        <label class="fr-check"><input type="checkbox" name="luces[]" value="1 luz marcha atrás"><span>1 única luz de marcha atrás</span></label>
+        <label class="fr-check"><input type="checkbox" name="luces[]" value="2 luces marcha atrás"><span>2 luces de marcha atrás</span></label>
+        <label class="fr-check" style="margin-bottom:18px;"><input type="checkbox" name="luces[]" value="Pendiente de confirmar"><span>Lo confirmaré más adelante</span></label>
+
+        <label for="original">¿El vehículo es original, sin modificaciones?</label>
+        <select id="original" name="original">
+          <option>Sí, es original</option>
+          <option>Sí, pero lleva enganche de remolque</option>
+          <option>No, lleva modificaciones</option>
+        </select>
+
+        <label>Accesorios (marca los que lleve)</label>
+        <label class="fr-check"><input type="checkbox" name="accesorios[]" value="Techo solar"><span>Techo solar</span></label>
+        <label class="fr-check"><input type="checkbox" name="accesorios[]" value="Bola de remolque / enganche"><span>Bola de remolque / enganche</span></label>
+        <label class="fr-check"><input type="checkbox" name="accesorios[]" value="Otros accesorios"><span>Otros (barras de techo, llantas, suspensión, etc.)</span></label>
+        <label for="accesorios_det">Detalle de accesorios y de su homologación</label>
+        <input id="accesorios_det" name="accesorios_detalle" type="text" placeholder="Ej. enganche con homologación incluida en el proyecto / certificado del fabricante">
+
+        <label for="reformas">Reformas o modificaciones de importancia (si las hay)</label>
+        <textarea id="reformas" name="reformas" rows="2" style="resize:vertical;"></textarea>
+        <label for="motivo">Describe brevemente la finalidad de la ficha reducida</label>
         <textarea id="motivo" name="motivo" rows="3" style="resize:vertical;"></textarea>
       </fieldset>
 
       <fieldset>
-        <legend>4. Documentación</legend>
+        <legend>5. Documentación y fotografías</legend>
         <div class="fr-files">
-          Sube fotos o PDF de:
+          <strong>Siempre se necesita:</strong>
           <ul>
-            <li>Permiso de circulación y ficha técnica (ambas caras)</li>
+            <li><strong>Documentación del vehículo completa y legible</strong>: permiso de circulación y ficha técnica (ambas caras). En vehículos importados, la <strong>documentación completa del país de origen</strong>.</li>
             <li>DNI / NIE del titular</li>
-            <li>Foto del número de bastidor y de la placa del fabricante</li>
+            <li><strong>Placa del fabricante</strong>: foto de la placa y de su emplazamiento en el vehículo</li>
+            <li><strong>Número de bastidor</strong>: foto del número y de su emplazamiento</li>
+            <li><strong>Fotografías del vehículo</strong>: frontal, trasera, ambos laterales e interior</li>
+            <li>Neumáticos montados (medida legible)</li>
+            <li>Si lleva accesorios (techo solar, bola de remolque…): foto del accesorio y de su <strong>homologación</strong></li>
           </ul>
           <input id="archivos" name="attachment" type="file" multiple accept="image/*,application/pdf" style="margin:0;">
           <div id="frFilesInfo" style="margin-top:8px;font-size:12.5px;color:var(--muted);"></div>
         </div>
+        <p style="font-size:13px;color:var(--muted);">Las fotos deben ser nítidas y con todos los datos legibles; si no lo son, tendremos que pedírtelas de nuevo y el plazo se retrasará.</p>
       </fieldset>
 
       <label class="fr-check"><input type="checkbox" name="acepta_privacidad" required><span>He leído y acepto la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</span></label>
-      <label class="fr-check"><input type="checkbox" name="acepta_condiciones" required><span>Confirmo que los datos son correctos y entiendo que el trámite comienza cuando se confirma el pago.</span></label>
+      <div style="background:var(--blue-soft);border-radius:var(--radius-sm);padding:14px 16px;font-size:13px;margin-bottom:14px;color:var(--ink);"><strong>Importante:</strong> realizar el pago no garantiza que la ficha reducida sea viable. Depende, entre otros factores, de la antigüedad del vehículo, de la calidad y legibilidad de la documentación aportada y de que el vehículo cumpla los requisitos exigibles. Si tras estudiar el caso no fuera viable, te lo comunicaremos y se aplicarán las condiciones de devolución indicadas en el momento de la contratación.</div>
+      <label class="fr-check"><input type="checkbox" name="acepta_condiciones" required><span>Confirmo que los datos son correctos y entiendo que el trámite comienza al confirmarse el pago y que el pago no garantiza la viabilidad de la ficha.</span></label>
 
       <button type="submit">Enviar solicitud y continuar al pago</button>
       <p id="fr-status" style="margin-top:14px;font-size:14px;" role="status"></p>

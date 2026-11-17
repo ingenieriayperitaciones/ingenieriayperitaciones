@@ -363,4 +363,4 @@
   }
   .fr-form label.fr-tier{ font-size:14px; font-weight:400; color:var(--ink); margin-bottom:0; }
   .fr-form label.fr-tier .fr-price small{ display:block; margin-top:2px; }
-  .fr-form label.fr-check{ font-size:13px; font-weight:500; color:var(--muted); margin-bottom:12px; }
+  .fr-form label.fr-check{ display:flex; gap:10px; font-size:13px; font-weight:500; color:var(--muted); margin-bottom:12px; }
