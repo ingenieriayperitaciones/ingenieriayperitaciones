@@ -325,3 +325,42 @@
     .section{ padding:60px 0; }
     .hero{ padding: 48px 0 60px; }
   }
+
+  /* ---------- Fichas reducidas ---------- */
+  .fr-tiers{ display:grid; grid-template-columns:1fr 1fr; gap:18px; max-width:760px; }
+  .fr-tier{ position:relative; display:block; background:#fff; border:2px solid var(--line); border-radius:var(--radius-md); padding:22px 22px 20px; cursor:pointer; }
+  .fr-tier input{ position:absolute; opacity:0; pointer-events:none; }
+  .fr-tier:has(input:checked){ border-color:var(--blue); background:var(--blue-soft); }
+  .fr-tier:has(input:focus-visible){ outline:3px solid var(--blue); outline-offset:2px; }
+  .fr-tier h3{ font-size:18px; margin-bottom:4px; }
+  .fr-tier .fr-price{ font-size:28px; font-weight:800; color:var(--blue); margin:6px 0; }
+  .fr-tier .fr-price small{ font-size:13px; font-weight:600; color:var(--muted); }
+  .fr-tier p{ font-size:13.5px; color:var(--muted); margin:0; }
+  .fr-form{ background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg); padding:30px; max-width:760px; }
+  .fr-form fieldset{ border:none; padding:0; margin:0 0 26px; }
+  .fr-form legend{ font-size:15px; font-weight:800; color:var(--ink); margin-bottom:14px; padding:0; }
+  .fr-form label{ display:block; font-size:12.5px; font-weight:700; color:var(--muted); margin-bottom:6px; }
+  .fr-form input[type=text], .fr-form input[type=email], .fr-form input[type=tel], .fr-form input[type=number], .fr-form select, .fr-form textarea{
+    width:100%; background:var(--bg); border:1.5px solid var(--line); color:var(--ink);
+    padding:12px 14px; font-family:'Plus Jakarta Sans',sans-serif; font-size:14px; margin-bottom:16px; border-radius:var(--radius-sm); }
+  .fr-form input:focus, .fr-form select:focus, .fr-form textarea:focus{ outline:none; border-color:var(--blue); }
+  .fr-row{ display:grid; grid-template-columns:1fr 1fr; gap:0 16px; }
+  .fr-files{ background:var(--bg); border:1.5px dashed var(--line); border-radius:var(--radius-sm); padding:16px; margin-bottom:16px; font-size:13.5px; }
+  .fr-files ul{ margin:8px 0 12px 18px; color:var(--muted); }
+  .fr-check{ display:flex; gap:10px; align-items:flex-start; font-size:13px; color:var(--muted); font-weight:500; margin-bottom:12px; }
+  .fr-check input{ width:auto; margin:3px 0 0; flex-shrink:0; }
+  .fr-form button[type=submit]{ width:100%; background:var(--blue); color:#fff; border:none; padding:15px; font-size:15px; font-weight:700; cursor:pointer; border-radius:999px; margin-top:8px; }
+  .fr-form button[type=submit]:hover{ background:var(--blue-dark); }
+  .fr-form button[disabled]{ opacity:.6; cursor:wait; }
+  .fr-pay{ display:none; margin-top:18px; padding:20px; border-radius:var(--radius-md); background:var(--blue-soft); text-align:center; }
+  .fr-steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  .fr-steps div{ background:#fff; border:1px solid var(--line); border-radius:var(--radius-md); padding:18px; font-size:14px; }
+  .fr-steps b{ display:block; color:var(--blue); font-size:20px; margin-bottom:4px; }
+  @media (max-width:880px){
+    .fr-tiers, .fr-row{ grid-template-columns:1fr; }
+    .fr-steps{ grid-template-columns:1fr 1fr; }
+    .fr-form{ padding:22px 18px; }
+  }
+  .fr-form label.fr-tier{ font-size:14px; font-weight:400; color:var(--ink); margin-bottom:0; }
+  .fr-form label.fr-tier .fr-price small{ display:block; margin-top:2px; }
+  .fr-form label.fr-check{ font-size:13px; font-weight:500; color:var(--muted); margin-bottom:12px; }
