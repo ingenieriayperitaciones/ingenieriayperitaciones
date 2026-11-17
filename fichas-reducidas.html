@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=20261117b">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -144,6 +144,7 @@
         <input id="provincia_itv" name="provincia_itv" type="text">
 
         <label style="margin-top:6px;">Dispositivos de alumbrado que lleva (marca los que correspondan)</label>
+        <div class="fr-checks">
         <label class="fr-check"><input type="checkbox" name="luces[]" value="Luces diurnas"><span>Luces diurnas</span></label>
         <label class="fr-check"><input type="checkbox" name="luces[]" value="Antiniebla delanteras"><span>Luces antiniebla delanteras</span></label>
         <label class="fr-check"><input type="checkbox" name="luces[]" value="1 antiniebla trasera"><span>1 única luz antiniebla trasera</span></label>
@@ -151,6 +152,7 @@
         <label class="fr-check"><input type="checkbox" name="luces[]" value="1 luz marcha atrás"><span>1 única luz de marcha atrás</span></label>
         <label class="fr-check"><input type="checkbox" name="luces[]" value="2 luces marcha atrás"><span>2 luces de marcha atrás</span></label>
         <label class="fr-check" style="margin-bottom:18px;"><input type="checkbox" name="luces[]" value="Pendiente de confirmar"><span>Lo confirmaré más adelante</span></label>
+        </div>
 
         <label for="original">¿El vehículo es original, sin modificaciones?</label>
         <select id="original" name="original">
@@ -160,9 +162,11 @@
         </select>
 
         <label>Accesorios (marca los que lleve)</label>
+        <div class="fr-checks">
         <label class="fr-check"><input type="checkbox" name="accesorios[]" value="Techo solar"><span>Techo solar</span></label>
         <label class="fr-check"><input type="checkbox" name="accesorios[]" value="Bola de remolque / enganche"><span>Bola de remolque / enganche</span></label>
         <label class="fr-check"><input type="checkbox" name="accesorios[]" value="Otros accesorios"><span>Otros (barras de techo, llantas, suspensión, etc.)</span></label>
+        </div>
         <label for="accesorios_det">Detalle de accesorios y de su homologación</label>
         <input id="accesorios_det" name="accesorios_detalle" type="text" placeholder="Ej. enganche con homologación incluida en el proyecto / certificado del fabricante">
 
@@ -205,12 +209,7 @@
   </div>
 </section>
 
-<section class="section section-alt">
-  <div class="wrap">
-    <div class="section-head"><h2>Preguntas frecuentes</h2></div>
-    <p style="max-width:720px;color:var(--muted);">Si tienes dudas sobre si tu vehículo necesita ficha reducida, <a href="/#contacto">escríbenos</a> antes de pagar y te lo confirmamos.</p>
-  </div>
-</section>
+<section class="section section-alt"><div class="wrap" style="text-align:center;"><p style="color:var(--muted);">¿Dudas sobre si tu vehículo necesita ficha reducida? <a href="/#contacto">Escríbenos</a> antes de pagar y te lo confirmamos.</p></div></section>
 
 <footer>
   <div class="wrap">

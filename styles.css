@@ -364,3 +364,7 @@
   .fr-form label.fr-tier{ font-size:14px; font-weight:400; color:var(--ink); margin-bottom:0; }
   .fr-form label.fr-tier .fr-price small{ display:block; margin-top:2px; }
   .fr-form label.fr-check{ display:flex; gap:10px; font-size:13px; font-weight:500; color:var(--muted); margin-bottom:12px; }
+  .fr-checks{ display:grid; grid-template-columns:1fr 1fr; gap:4px 18px; margin:2px 0 18px; padding:14px 16px; background:var(--bg); border:1px solid var(--line); border-radius:var(--radius-sm); }
+  .fr-checks .fr-check{ margin:6px 0 !important; }
+  .fr-form select{ appearance:auto; }
+  @media (max-width:880px){ .fr-checks{ grid-template-columns:1fr; } }
