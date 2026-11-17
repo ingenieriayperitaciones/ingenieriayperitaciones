@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datos del vehículo — Ficha reducida</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=20261117b">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<link rel="canonical" href="https://ingenieriayperitaciones.com/fichas-reducidas-datos.html">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <ul>
+      <li>Ingenieros técnicos y peritos con experiencia mecánica</li>
+      <li>Informe en un máximo de 10 días</li>
+      <li>Cataluña · Valencia · Murcia · Madrid · Asturias · Galicia</li>
+    </ul>
+    <div><a href="/#contacto">Cuéntanos tu caso →</a></div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav-inner">
+    <div class="brand">
+      <a href="/" style="display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;">
+        <img src="logo-icon.png" alt="JP Ingeniería y Peritaciones" class="mark" style="object-fit:contain;">
+        <div>JP Ingeniería<br><small>y Peritaciones</small></div>
+      </a>
+    </div>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="acerca-de.html">Equipo</a></li>
+        <li><a href="/#servicios">Servicios periciales</a></li>
+        <li><a href="reformas.html">Reformas</a></li>
+        <li><a href="fichas-reducidas.html">Fichas reducidas</a></li>
+        <li><a href="zonas.html">Zonas</a></li>
+        <li><a href="/#ejemplos">Ejemplos</a></li>
+      </ul>
+    </nav>
+    <a href="/#contacto" class="nav-cta">Contactar</a>
+
+    <button class="burger" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    </div>
+</header>
+
+
+<section class="section" style="padding-top:56px;padding-bottom:20px;">
+  <div class="wrap">
+    <div class="eyebrow">Ficha reducida</div>
+    <h1 style="font-size:clamp(28px,4vw,40px);line-height:1.15;margin-bottom:18px;">Datos del vehículo</h1>
+    <p class="lead" style="max-width:760px;">Completa estos datos para poder empezar. Después, sube las fotos y la documentación en la carpeta que te hemos enviado por email.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <form class="fr-form" id="frDatos">
+      <fieldset>
+        <legend>Vehículo</legend>
+        <div class="fr-row">
+          <div><label for="vin">Nº de bastidor (VIN)</label><input id="vin" name="vin" type="text" required></div>
+          <div><label for="matricula">Matrícula (si la tiene)</label><input id="matricula" name="matricula" type="text"></div>
+        </div>
+        <div class="fr-row">
+          <div><label for="marca">Marca</label><input id="marca" name="marca" type="text" required></div>
+          <div><label for="modelo">Modelo y versión</label><input id="modelo" name="modelo" type="text" required></div>
+        </div>
+        <div class="fr-row">
+          <div><label for="neumaticos">Neumáticos montados (medida)</label><input id="neumaticos" name="neumaticos" type="text" placeholder="Ej. 205/55 R16"></div>
+          <div><label for="caja">Caja de cambios</label><select id="caja" name="caja"><option>Manual</option><option>Automática</option></select></div>
+        </div>
+        <label for="provincia">Provincia donde pasará la ITV</label>
+        <input id="provincia" name="provincia" type="text">
+      </fieldset>
+
+      <fieldset>
+        <legend>Equipamiento</legend>
+        <label>Dispositivos de alumbrado que lleva (marca los que correspondan)</label>
+        <div class="fr-checks">
+          <label class="fr-check"><input type="checkbox" name="luces" value="Luces diurnas"><span>Luces diurnas</span></label>
+          <label class="fr-check"><input type="checkbox" name="luces" value="Antiniebla delanteras"><span>Luces antiniebla delanteras</span></label>
+          <label class="fr-check"><input type="checkbox" name="luces" value="1 antiniebla trasera"><span>1 única luz antiniebla trasera</span></label>
+          <label class="fr-check"><input type="checkbox" name="luces" value="2 antiniebla traseras"><span>2 luces antiniebla traseras</span></label>
+          <label class="fr-check"><input type="checkbox" name="luces" value="1 luz marcha atrás"><span>1 única luz de marcha atrás</span></label>
+          <label class="fr-check"><input type="checkbox" name="luces" value="2 luces marcha atrás"><span>2 luces de marcha atrás</span></label>
+          <label class="fr-check"><input type="checkbox" name="luces" value="Pendiente de confirmar"><span>Lo confirmaré más adelante</span></label>
+        </div>
+        <label for="original">¿El vehículo es original, sin modificaciones?</label>
+        <select id="original" name="original">
+          <option>Sí, es original</option>
+          <option>Sí, pero lleva enganche de remolque</option>
+          <option>No, lleva modificaciones</option>
+        </select>
+        <label>Accesorios (marca los que lleve)</label>
+        <div class="fr-checks">
+          <label class="fr-check"><input type="checkbox" name="accesorios" value="Techo solar"><span>Techo solar</span></label>
+          <label class="fr-check"><input type="checkbox" name="accesorios" value="Bola de remolque / enganche"><span>Bola de remolque / enganche</span></label>
+          <label class="fr-check"><input type="checkbox" name="accesorios" value="Otros accesorios"><span>Otros (barras de techo, llantas, suspensión, etc.)</span></label>
+        </div>
+        <label for="accesorios_det">Detalle de accesorios y de su homologación</label>
+        <input id="accesorios_det" name="accesorios_detalle" type="text" placeholder="Ej. enganche con homologación incluida en el proyecto / certificado del fabricante">
+        <label for="reformas">Reformas o modificaciones de importancia (si las hay)</label>
+        <textarea id="reformas" name="reformas" rows="2" style="resize:vertical;"></textarea>
+        <label for="finalidad">Describe brevemente la finalidad de la ficha reducida</label>
+        <textarea id="finalidad" name="finalidad" rows="3" style="resize:vertical;"></textarea>
+      </fieldset>
+
+      <input type="checkbox" id="botcheck" style="display:none;">
+      <button type="submit">Enviar datos</button>
+      <p id="fr-status" style="margin-top:14px;font-size:14px;" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img src="logo-icon-fondo-blanco.png" alt="JP Ingeniería y Peritaciones" style="width:38px;height:38px;border-radius:12px;object-fit:contain;flex-shrink:0;">JP Ingeniería y Peritaciones</div>
+        <p>Peritos independientes e ingenieros de vehículos: vicios ocultos, garantías, pérdida total y defectos de fábrica. También reformas y homologación de vehículos.</p>
+        <p style="margin-top:10px;font-size:12.5px;color:var(--muted);">Colegiado nº 27951 · Colegio de Ingenieros Garraf-Penedès</p>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios periciales</h4>
+        <ul>
+          <li><a href="/#servicios">Vicios ocultos</a></li>
+          <li><a href="/#servicios">Pérdida total</a></li>
+          <li><a href="/#servicios">Nombramiento de perito</a></li>
+          <li><a href="/#servicios">Reclamación al taller</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Zonas</h4>
+        <ul>
+          <li><a href="zonas.html">Todas las zonas</a></li>
+          <li><a href="perito-coches-alt-penedes.html">Alt Penedès</a></li>
+          <li><a href="perito-coches-garraf.html">Garraf</a></li>
+          <li><a href="perito-coches-barcelones.html">Barcelonès</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="/#ejemplos">Ejemplos de informes</a></li>
+          <li><a href="/#contacto">Solicitar consulta</a></li>
+          <li><a href="acerca-de.html">Acerca de</a></li>
+          <li><a href="fichas-reducidas.html">Fichas reducidas</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="aviso-legal.html">Aviso legal</a></li>
+          <li><a href="privacidad.html">Política de privacidad</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span id="year"></span> JP Ingeniería y Peritaciones</div>
+      <div>Perito de valoración de vehículos</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var DRIVE_SCRIPT = 'https://script.google.com/macros/s/AKfycbyT1BK3UzIOIfq5QjHxITAMbcCNGeXanDmF2RxXt4LEndPtXmJP8CXtB7GTjlP5mSCE/exec';
+  var ref = new URLSearchParams(location.search).get('ref') || '';
+  var form = document.getElementById('frDatos');
+  var status = document.getElementById('fr-status');
+  function vals(n){ return Array.prototype.map.call(form.querySelectorAll('input[name='+n+']:checked'), function(x){return x.value;}).join(', '); }
+  if (!ref){ status.style.color = '#c0392b'; status.textContent = 'Este enlace no es válido. Usa el enlace que te enviamos por email tras el pago.'; form.querySelector('button').disabled = true; }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button[type=submit]');
+    btn.disabled = true; status.style.color = 'var(--muted)'; status.textContent = 'Enviando...';
+    var f = form.elements;
+    fetch(DRIVE_SCRIPT, { method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body: JSON.stringify({ action:'datos', ref:ref, botcheck:document.getElementById('botcheck').checked,
+        vin:f.vin.value, matricula:f.matricula.value, marca:f.marca.value, modelo:f.modelo.value,
+        neumaticos:f.neumaticos.value, caja:f.caja.value, provincia:f.provincia.value,
+        luces:vals('luces'), original:f.original.value, accesorios:vals('accesorios'),
+        accesorios_detalle:f.accesorios_detalle.value, reformas:f.reformas.value, finalidad:f.finalidad.value }) })
+      .then(function(r){ return r.json(); })
+      .then(function(j){
+        if (j.ok){ status.style.color = '#1a7f37'; status.textContent = 'Datos recibidos. Ahora sube las fotos y la documentación en la carpeta del email. En cuanto lo tengamos todo, empezamos.'; form.reset(); }
+        else { throw new Error(j.error); }
+      })
+      .catch(function(){ status.style.color = '#c0392b'; status.textContent = 'No se ha podido enviar. Escríbenos a phpericial@gmail.com indicando tu bastidor.'; })
+      .finally(function(){ btn.disabled = false; });
+  });
+</script>
+
+<script src="site.js"></script>
+</body>
+</html>

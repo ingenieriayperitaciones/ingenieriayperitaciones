@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ficha reducida online — JP Ingeniería y Peritaciones</title>
-<meta name="description" content="Solicita tu ficha reducida online: ingeniero técnico colegiado, tramitación rápida (Normal o Express), formulario con subida de documentación y pago seguro.">
+<meta name="description" content="Solicita tu ficha reducida online: ingeniero técnico colegiado, tramitación rápida (Normal o Express) y pago seguro.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -60,7 +60,7 @@
   <div class="wrap">
     <div class="eyebrow">Homologación de vehículos</div>
     <h1 style="font-size:clamp(28px,4vw,40px);line-height:1.15;margin-bottom:18px;">Solicita tu ficha reducida online</h1>
-    <p class="lead" style="max-width:760px;">Rellena el formulario, sube la documentación del vehículo y elige el plazo. Te la tramita un ingeniero técnico colegiado, sin desplazamientos.</p>
+    <p class="lead" style="max-width:760px;">Elige el plazo, rellena tus datos y paga. Después completas los datos del vehículo y subes la documentación. Te la tramita un ingeniero técnico colegiado, sin desplazamientos.</p>
   </div>
 </section>
 
@@ -69,8 +69,8 @@
     <div class="section-head"><h2>Cómo funciona</h2></div>
     <div class="fr-steps">
       <div><b>1</b>Elige Normal o Express</div>
-      <div><b>2</b>Rellena los datos y sube la documentación</div>
-      <div><b>3</b>Paga de forma segura con tarjeta</div>
+      <div><b>2</b>Rellena tus datos y paga de forma segura</div>
+      <div><b>3</b>Completa los datos del vehículo y sube las fotos</div>
       <div><b>4</b>Recibes la ficha reducida por email</div>
     </div>
   </div>
@@ -83,6 +83,7 @@
       <input type="hidden" name="subject" value="Nueva solicitud de ficha reducida">
       <input type="hidden" name="from_name" value="JP Ingeniería y Peritaciones — Fichas reducidas">
       <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+      <input type="hidden" name="ref" id="frRef" value="">
 
       <fieldset>
         <legend>1. Elige el plazo</legend>
@@ -106,10 +107,6 @@
         <legend>2. Tipo de vehículo</legend>
         <label class="fr-check" style="color:var(--ink);"><input type="radio" name="tipo_vehiculo" value="Europeo (con contraseña de homologación)" checked><span><strong>Europeo</strong>, de un país europeo y con contraseña de homologación</span></label>
         <label class="fr-check" style="color:var(--ink);"><input type="radio" name="tipo_vehiculo" value="Tercer país"><span><strong>De un tercer país</strong> (fuera de Europa)</span></label>
-        <label for="motivo_sol" style="margin-top:14px;">Motivo de la solicitud</label>
-        <select id="motivo_sol" name="motivo_solicitud">
-          <option>Importación</option><option>Reforma / homologación</option><option>Traslado de residencia del titular</option><option>Otros</option>
-        </select>
       </fieldset>
 
       <fieldset>
@@ -122,77 +119,16 @@
           <div><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
           <div><label for="telefono">Teléfono</label><input id="telefono" name="telefono" type="tel" required autocomplete="tel"></div>
         </div>
-        <label for="direccion">Dirección (calle, nº, CP y municipio)</label>
-        <input id="direccion" name="direccion" type="text" required autocomplete="street-address">
       </fieldset>
 
-      <fieldset>
-        <legend>4. Datos del vehículo</legend>
-        <div class="fr-row">
-          <div><label for="matricula">Matrícula</label><input id="matricula" name="matricula" type="text" required></div>
-          <div><label for="bastidor">Nº de bastidor (VIN)</label><input id="bastidor" name="bastidor" type="text" required></div>
-        </div>
-        <div class="fr-row">
-          <div><label for="marca">Marca</label><input id="marca" name="marca" type="text" required></div>
-          <div><label for="modelo">Modelo y versión</label><input id="modelo" name="modelo" type="text" required></div>
-        </div>
-        <div class="fr-row">
-          <div><label for="neumaticos">Neumáticos montados (medida)</label><input id="neumaticos" name="neumaticos" type="text" placeholder="Ej. 205/55 R16"></div>
-          <div><label for="caja">Caja de cambios</label><select id="caja" name="caja_cambios"><option>Manual</option><option>Automática</option></select></div>
-        </div>
-        <label for="provincia_itv">Provincia donde pasará la ITV</label>
-        <input id="provincia_itv" name="provincia_itv" type="text">
-
-        <label style="margin-top:6px;">Dispositivos de alumbrado que lleva (marca los que correspondan)</label>
-        <div class="fr-checks">
-        <label class="fr-check"><input type="checkbox" name="luces[]" value="Luces diurnas"><span>Luces diurnas</span></label>
-        <label class="fr-check"><input type="checkbox" name="luces[]" value="Antiniebla delanteras"><span>Luces antiniebla delanteras</span></label>
-        <label class="fr-check"><input type="checkbox" name="luces[]" value="1 antiniebla trasera"><span>1 única luz antiniebla trasera</span></label>
-        <label class="fr-check"><input type="checkbox" name="luces[]" value="2 antiniebla traseras"><span>2 luces antiniebla traseras</span></label>
-        <label class="fr-check"><input type="checkbox" name="luces[]" value="1 luz marcha atrás"><span>1 única luz de marcha atrás</span></label>
-        <label class="fr-check"><input type="checkbox" name="luces[]" value="2 luces marcha atrás"><span>2 luces de marcha atrás</span></label>
-        <label class="fr-check" style="margin-bottom:18px;"><input type="checkbox" name="luces[]" value="Pendiente de confirmar"><span>Lo confirmaré más adelante</span></label>
-        </div>
-
-        <label for="original">¿El vehículo es original, sin modificaciones?</label>
-        <select id="original" name="original">
-          <option>Sí, es original</option>
-          <option>Sí, pero lleva enganche de remolque</option>
-          <option>No, lleva modificaciones</option>
-        </select>
-
-        <label>Accesorios (marca los que lleve)</label>
-        <div class="fr-checks">
-        <label class="fr-check"><input type="checkbox" name="accesorios[]" value="Techo solar"><span>Techo solar</span></label>
-        <label class="fr-check"><input type="checkbox" name="accesorios[]" value="Bola de remolque / enganche"><span>Bola de remolque / enganche</span></label>
-        <label class="fr-check"><input type="checkbox" name="accesorios[]" value="Otros accesorios"><span>Otros (barras de techo, llantas, suspensión, etc.)</span></label>
-        </div>
-        <label for="accesorios_det">Detalle de accesorios y de su homologación</label>
-        <input id="accesorios_det" name="accesorios_detalle" type="text" placeholder="Ej. enganche con homologación incluida en el proyecto / certificado del fabricante">
-
-        <label for="reformas">Reformas o modificaciones de importancia (si las hay)</label>
-        <textarea id="reformas" name="reformas" rows="2" style="resize:vertical;"></textarea>
-        <label for="motivo">Describe brevemente la finalidad de la ficha reducida</label>
-        <textarea id="motivo" name="motivo" rows="3" style="resize:vertical;"></textarea>
-      </fieldset>
-
-      <fieldset>
-        <legend>5. Documentación y fotografías</legend>
-        <div class="fr-files">
-          <strong>Tras el pago recibirás un email con una carpeta privada donde subir estas fotos (en horizontal, nítidas y con todo legible):</strong>
-          <ul>
-            <li><strong>Documentación completa del vehículo del país de origen</strong>: permiso de circulación y ficha técnica, ambas caras, completa y legible</li>
-            <li>DNI / NIE del titular</li>
-            <li><strong>Placa del fabricante</strong>, mostrando bien su ubicación en el vehículo</li>
-            <li><strong>Número de bastidor</strong> grabado, en el vano motor o donde lo tenga</li>
-            <li><strong>Medida de los neumáticos</strong> instalados en el vehículo</li>
-            <li><strong>Fotografías del vehículo</strong>: frontal, trasera, ambos laterales e interior</li>
-            <li>Si lleva bola de remolque: la <strong>contraseña de homologación</strong> de la bola</li>
-            <li>Todos los <strong>extras de fábrica</strong>: techo solar, accesorios camper, etc., con su homologación si la tienen</li>
-          </ul>
-        </div>
-        <p style="font-size:13px;color:var(--muted);">Las fotos deben ser nítidas y con todos los datos legibles; si no lo son, tendremos que pedírtelas de nuevo y el plazo se retrasará.</p>
-      </fieldset>
+      <div class="fr-files" style="margin-bottom:22px;">
+        <strong>Qué pasa después del pago</strong>
+        <p style="margin:8px 0 6px;">En pocos minutos recibirás un email con dos pasos:</p>
+        <ul>
+          <li>Un formulario corto con los datos del vehículo (bastidor, matrícula, neumáticos, luces, accesorios).</li>
+          <li>Una carpeta privada donde subir las fotos y la documentación: documentación completa del país de origen, DNI/NIE, placa del fabricante y bastidor, neumáticos, fotos del vehículo y homologación de bola de remolque y extras de fábrica. Siempre en horizontal, nítidas y legibles.</li>
+        </ul>
+      </div>
 
       <label class="fr-check"><input type="checkbox" name="acepta_privacidad" required><span>He leído y acepto la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</span></label>
       <div style="background:var(--blue-soft);border-radius:var(--radius-sm);padding:14px 16px;font-size:13px;margin-bottom:14px;color:var(--ink);"><strong>Importante:</strong> realizar el pago no garantiza que la ficha reducida sea viable. Depende, entre otros factores, de la antigüedad del vehículo, de la calidad y legibilidad de la documentación aportada y de que el vehículo cumpla los requisitos exigibles. Si tras estudiar el caso no fuera viable, te lo comunicaremos y se aplicarán las condiciones de devolución indicadas en el momento de la contratación.</div>
@@ -276,9 +212,10 @@
     var btn = form.querySelector('button[type=submit]');
     btn.disabled = true; status.style.color = 'var(--muted)'; status.textContent = 'Enviando...';
     var ref = 'fr' + Date.now().toString(36) + Math.random().toString(36).slice(2,10) + Math.random().toString(36).slice(2,10);
+    document.getElementById('frRef').value = ref;
     var v = function(n){ return (form.elements[n] && form.elements[n].value) || ''; };
     var drive = fetch(DRIVE_SCRIPT, { method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'},
-      body: JSON.stringify({ ref:ref, nombre:v('nombre'), email:v('email'), vin:v('bastidor'), matricula:v('matricula'),
+      body: JSON.stringify({ ref:ref, nombre:v('nombre'), email:v('email'),
         modalidad:form.querySelector('input[name=modalidad]:checked').value,
         tipo:form.querySelector('input[name=tipo_vehiculo]:checked').value, botcheck:form.elements['botcheck'].checked }) })
       .catch(function(){});
