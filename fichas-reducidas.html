@@ -175,7 +175,7 @@
       <fieldset>
         <legend>5. Documentación y fotografías</legend>
         <div class="fr-files">
-          <strong>Tras enviar la solicitud recibirás un email con una carpeta privada donde subir estas fotos (en horizontal, nítidas y con todo legible):</strong>
+          <strong>Tras el pago recibirás un email con una carpeta privada donde subir estas fotos (en horizontal, nítidas y con todo legible):</strong>
           <ul>
             <li><strong>Documentación del vehículo completa y legible</strong>: permiso de circulación y ficha técnica (ambas caras). En vehículos importados, la <strong>documentación completa del país de origen</strong>.</li>
             <li>DNI / NIE del titular</li>
@@ -198,7 +198,7 @@
       <p id="fr-status" style="margin-top:14px;font-size:14px;" role="status"></p>
 
       <div class="fr-pay" id="frPay">
-        <p style="margin-bottom:14px;"><strong>Solicitud recibida.</strong> Te hemos enviado un email con la carpeta donde subir las fotos (revisa también spam). Último paso: realiza el pago para que empecemos.</p>
+        <p style="margin-bottom:14px;"><strong>Solicitud recibida.</strong> Último paso: realiza el pago. Cuando se confirme, en pocos minutos recibirás un email con la carpeta privada donde subir las fotos (revisa también spam).</p>
         <a id="frPayBtn" class="btn btn-primary" href="#" rel="noopener">Pagar con tarjeta →</a>
       </div>
     </form>
@@ -276,9 +276,10 @@
     e.preventDefault();
     var btn = form.querySelector('button[type=submit]');
     btn.disabled = true; status.style.color = 'var(--muted)'; status.textContent = 'Enviando...';
+    var ref = 'fr' + Date.now().toString(36) + Math.random().toString(36).slice(2,10) + Math.random().toString(36).slice(2,10);
     var v = function(n){ return (form.elements[n] && form.elements[n].value) || ''; };
     var drive = fetch(DRIVE_SCRIPT, { method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'},
-      body: JSON.stringify({ nombre:v('nombre'), email:v('email'), vin:v('bastidor'), matricula:v('matricula'),
+      body: JSON.stringify({ ref:ref, nombre:v('nombre'), email:v('email'), vin:v('bastidor'), matricula:v('matricula'),
         modalidad:form.querySelector('input[name=modalidad]:checked').value,
         tipo:form.querySelector('input[name=tipo_vehiculo]:checked').value, botcheck:form.elements['botcheck'].checked }) })
       .catch(function(){});
@@ -289,12 +290,13 @@
         if (json.success){
           var modalidad = form.querySelector('input[name=modalidad]:checked').value;
           var link = STRIPE_LINKS[modalidad];
+          var emailVal = v('email');
           status.style.color = '#1a7f37'; status.textContent = '';
           if (link){
-            document.getElementById('frPayBtn').href = link;
+            document.getElementById('frPayBtn').href = link + '?client_reference_id=' + encodeURIComponent(ref) + '&prefilled_email=' + encodeURIComponent(emailVal);
             document.getElementById('frPay').style.display = 'block';
           } else {
-            status.textContent = 'Solicitud enviada. Revisa tu email: te hemos enviado la carpeta para subir las fotos.';
+            status.textContent = 'Solicitud enviada. Te escribiremos enseguida con el enlace de pago.';
           }
           form.reset();
         } else { throw new Error(json.message); }
