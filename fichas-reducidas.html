@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ficha reducida online — JP Ingeniería y Peritaciones</title>
+<meta name="description" content="Solicita tu ficha reducida online: ingeniero técnico colegiado, tramitación rápida (Normal o Express), formulario con subida de documentación y pago seguro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<link rel="canonical" href="https://ingenieriayperitaciones.com/fichas-reducidas.html">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <ul>
+      <li>Ingenieros técnicos y peritos con experiencia mecánica</li>
+      <li>Informe en un máximo de 10 días</li>
+      <li>Cataluña · Valencia · Murcia · Madrid · Asturias · Galicia</li>
+    </ul>
+    <div><a href="/#contacto">Cuéntanos tu caso →</a></div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav-inner">
+    <div class="brand">
+      <a href="/" style="display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;">
+        <img src="logo-icon.png" alt="JP Ingeniería y Peritaciones" class="mark" style="object-fit:contain;">
+        <div>JP Ingeniería<br><small>y Peritaciones</small></div>
+      </a>
+    </div>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="acerca-de.html">Equipo</a></li>
+        <li><a href="/#servicios">Servicios periciales</a></li>
+        <li><a href="reformas.html">Reformas</a></li>
+        <li><a href="fichas-reducidas.html">Fichas reducidas</a></li>
+        <li><a href="zonas.html">Zonas</a></li>
+        <li><a href="/#ejemplos">Ejemplos</a></li>
+      </ul>
+    </nav>
+    <a href="/#contacto" class="nav-cta">Contactar</a>
+
+    <button class="burger" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    </div>
+</header>
+
+<section class="section" style="padding-top:56px;padding-bottom:20px;">
+  <div class="wrap">
+    <div class="eyebrow">Homologación de vehículos</div>
+    <h1 style="font-size:clamp(28px,4vw,40px);line-height:1.15;margin-bottom:18px;">Solicita tu ficha reducida online</h1>
+    <p class="lead" style="max-width:760px;">Rellena el formulario, sube la documentación del vehículo y elige el plazo. Te la tramita un ingeniero técnico colegiado, sin desplazamientos.</p>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head"><h2>Cómo funciona</h2></div>
+    <div class="fr-steps">
+      <div><b>1</b>Elige Normal o Express</div>
+      <div><b>2</b>Rellena los datos y sube la documentación</div>
+      <div><b>3</b>Paga de forma segura con tarjeta</div>
+      <div><b>4</b>Recibes la ficha reducida por email</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="solicitud">
+  <div class="wrap">
+    <form class="fr-form" id="frForm" action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="access_key" value="38b1b18d-a95d-4339-b1c9-cb35e2d22700">
+      <input type="hidden" name="subject" value="Nueva solicitud de ficha reducida">
+      <input type="hidden" name="from_name" value="JP Ingeniería y Peritaciones — Fichas reducidas">
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+
+      <fieldset>
+        <legend>1. Elige el plazo</legend>
+        <div class="fr-tiers" style="max-width:none;">
+          <label class="fr-tier">
+            <input type="radio" name="modalidad" value="Normal" checked>
+            <h3>Normal</h3>
+            <div class="fr-price">50 € <small>IVA incl.</small></div>
+            <p>Entrega en 24-48 h laborables (lunes a viernes, sin festivos).</p>
+          </label>
+          <label class="fr-tier">
+            <input type="radio" name="modalidad" value="Express">
+            <h3>Express</h3>
+            <div class="fr-price">80 € <small>IVA incl.</small></div>
+            <p>Entrega en 24 horas.</p>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. Tipo de vehículo</legend>
+        <label class="fr-check" style="color:var(--ink);"><input type="radio" name="tipo_vehiculo" value="Europeo (con contraseña de homologación)" checked><span><strong>Europeo</strong>, con contraseña de homologación (matriculado en España)</span></label>
+        <label class="fr-check" style="color:var(--ink);"><input type="radio" name="tipo_vehiculo" value="Importado"><span><strong>Importado</strong> (matriculado en otro país)</span></label>
+        <label for="motivo_sol" style="margin-top:14px;">Motivo de la solicitud</label>
+        <select id="motivo_sol" name="motivo_solicitud">
+          <option>Importación</option><option>Reforma / homologación</option><option>Traslado de residencia del titular</option><option>Otros</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. Datos del titular</legend>
+        <div class="fr-row">
+          <div><label for="nombre">Nombre y apellidos</label><input id="nombre" name="nombre" type="text" required autocomplete="name"></div>
+          <div><label for="dni">DNI / NIE / CIF</label><input id="dni" name="dni" type="text" required></div>
+        </div>
+        <div class="fr-row">
+          <div><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+          <div><label for="telefono">Teléfono</label><input id="telefono" name="telefono" type="tel" required autocomplete="tel"></div>
+        </div>
+        <label for="direccion">Dirección (calle, nº, CP y municipio)</label>
+        <input id="direccion" name="direccion" type="text" required autocomplete="street-address">
+      </fieldset>
+
+      <fieldset>
+        <legend>4. Datos del vehículo</legend>
+        <div class="fr-row">
+          <div><label for="matricula">Matrícula</label><input id="matricula" name="matricula" type="text" required></div>
+          <div><label for="bastidor">Nº de bastidor (VIN)</label><input id="bastidor" name="bastidor" type="text" required></div>
+        </div>
+        <div class="fr-row">
+          <div><label for="marca">Marca</label><input id="marca" name="marca" type="text" required></div>
+          <div><label for="modelo">Modelo y versión</label><input id="modelo" name="modelo" type="text" required></div>
+        </div>
+        <div class="fr-row">
+          <div><label for="neumaticos">Neumáticos montados (medida)</label><input id="neumaticos" name="neumaticos" type="text" placeholder="Ej. 205/55 R16"></div>
+          <div><label for="caja">Caja de cambios</label><select id="caja" name="caja_cambios"><option>Manual</option><option>Automática</option></select></div>
+        </div>
+        <label for="provincia_itv">Provincia donde pasará la ITV</label>
+        <input id="provincia_itv" name="provincia_itv" type="text">
+
+        <label style="margin-top:6px;">Dispositivos de alumbrado que lleva (marca los que correspondan)</label>
+        <label class="fr-check"><input type="checkbox" name="luces[]" value="Luces diurnas"><span>Luces diurnas</span></label>
+        <label class="fr-check"><input type="checkbox" name="luces[]" value="Antiniebla delanteras"><span>Luces antiniebla delanteras</span></label>
+        <label class="fr-check"><input type="checkbox" name="luces[]" value="1 antiniebla trasera"><span>1 única luz antiniebla trasera</span></label>
+        <label class="fr-check"><input type="checkbox" name="luces[]" value="2 antiniebla traseras"><span>2 luces antiniebla traseras</span></label>
+        <label class="fr-check"><input type="checkbox" name="luces[]" value="1 luz marcha atrás"><span>1 única luz de marcha atrás</span></label>
+        <label class="fr-check"><input type="checkbox" name="luces[]" value="2 luces marcha atrás"><span>2 luces de marcha atrás</span></label>
+        <label class="fr-check" style="margin-bottom:18px;"><input type="checkbox" name="luces[]" value="Pendiente de confirmar"><span>Lo confirmaré más adelante</span></label>
+
+        <label for="original">¿El vehículo es original, sin modificaciones?</label>
+        <select id="original" name="original">
+          <option>Sí, es original</option>
+          <option>Sí, pero lleva enganche de remolque</option>
+          <option>No, lleva modificaciones</option>
+        </select>
+
+        <label>Accesorios (marca los que lleve)</label>
+        <label class="fr-check"><input type="checkbox" name="accesorios[]" value="Techo solar"><span>Techo solar</span></label>
+        <label class="fr-check"><input type="checkbox" name="accesorios[]" value="Bola de remolque / enganche"><span>Bola de remolque / enganche</span></label>
+        <label class="fr-check"><input type="checkbox" name="accesorios[]" value="Otros accesorios"><span>Otros (barras de techo, llantas, suspensión, etc.)</span></label>
+        <label for="accesorios_det">Detalle de accesorios y de su homologación</label>
+        <input id="accesorios_det" name="accesorios_detalle" type="text" placeholder="Ej. enganche con homologación incluida en el proyecto / certificado del fabricante">
+
+        <label for="reformas">Reformas o modificaciones de importancia (si las hay)</label>
+        <textarea id="reformas" name="reformas" rows="2" style="resize:vertical;"></textarea>
+        <label for="motivo">Describe brevemente la finalidad de la ficha reducida</label>
+        <textarea id="motivo" name="motivo" rows="3" style="resize:vertical;"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>5. Documentación y fotografías</legend>
+        <div class="fr-files">
+          <strong>Tras enviar la solicitud recibirás un email con una carpeta privada donde subir estas fotos (en horizontal, nítidas y con todo legible):</strong>
+          <ul>
+            <li><strong>Documentación del vehículo completa y legible</strong>: permiso de circulación y ficha técnica (ambas caras). En vehículos importados, la <strong>documentación completa del país de origen</strong>.</li>
+            <li>DNI / NIE del titular</li>
+            <li><strong>Placa del fabricante</strong>, mostrando bien su ubicación en el vehículo</li>
+            <li><strong>Número de bastidor</strong> grabado, en el vano motor o donde lo tenga</li>
+            <li><strong>Medida de los neumáticos</strong> instalados en el vehículo</li>
+            <li><strong>Fotografías del vehículo</strong>: frontal, trasera, ambos laterales e interior</li>
+            <li>Si lleva bola de remolque: la <strong>contraseña de homologación</strong> de la bola</li>
+            <li>Todos los <strong>extras de fábrica</strong>: techo solar, accesorios camper, etc., con su homologación si la tienen</li>
+          </ul>
+        </div>
+        <p style="font-size:13px;color:var(--muted);">Las fotos deben ser nítidas y con todos los datos legibles; si no lo son, tendremos que pedírtelas de nuevo y el plazo se retrasará.</p>
+      </fieldset>
+
+      <label class="fr-check"><input type="checkbox" name="acepta_privacidad" required><span>He leído y acepto la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</span></label>
+      <div style="background:var(--blue-soft);border-radius:var(--radius-sm);padding:14px 16px;font-size:13px;margin-bottom:14px;color:var(--ink);"><strong>Importante:</strong> realizar el pago no garantiza que la ficha reducida sea viable. Depende, entre otros factores, de la antigüedad del vehículo, de la calidad y legibilidad de la documentación aportada y de que el vehículo cumpla los requisitos exigibles. Si tras estudiar el caso no fuera viable, te lo comunicaremos y se aplicarán las condiciones de devolución indicadas en el momento de la contratación.</div>
+      <label class="fr-check"><input type="checkbox" name="acepta_condiciones" required><span>Confirmo que los datos son correctos y entiendo que el trámite comienza al confirmarse el pago y que el pago no garantiza la viabilidad de la ficha.</span></label>
+
+      <button type="submit">Enviar solicitud y continuar al pago</button>
+      <p id="fr-status" style="margin-top:14px;font-size:14px;" role="status"></p>
+
+      <div class="fr-pay" id="frPay">
+        <p style="margin-bottom:14px;"><strong>Solicitud recibida.</strong> Te hemos enviado un email con la carpeta donde subir las fotos (revisa también spam). Último paso: realiza el pago para que empecemos.</p>
+        <a id="frPayBtn" class="btn btn-primary" href="#" rel="noopener">Pagar con tarjeta →</a>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head"><h2>Preguntas frecuentes</h2></div>
+    <p style="max-width:720px;color:var(--muted);">Si tienes dudas sobre si tu vehículo necesita ficha reducida, <a href="/#contacto">escríbenos</a> antes de pagar y te lo confirmamos.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img src="logo-icon-fondo-blanco.png" alt="JP Ingeniería y Peritaciones" style="width:38px;height:38px;border-radius:12px;object-fit:contain;flex-shrink:0;">JP Ingeniería y Peritaciones</div>
+        <p>Peritos independientes e ingenieros de vehículos: vicios ocultos, garantías, pérdida total y defectos de fábrica. También reformas y homologación de vehículos.</p>
+        <p style="margin-top:10px;font-size:12.5px;color:var(--muted);">Colegiado nº 27951 · Colegio de Ingenieros Garraf-Penedès</p>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios periciales</h4>
+        <ul>
+          <li><a href="/#servicios">Vicios ocultos</a></li>
+          <li><a href="/#servicios">Pérdida total</a></li>
+          <li><a href="/#servicios">Nombramiento de perito</a></li>
+          <li><a href="/#servicios">Reclamación al taller</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Zonas</h4>
+        <ul>
+          <li><a href="zonas.html">Todas las zonas</a></li>
+          <li><a href="perito-coches-alt-penedes.html">Alt Penedès</a></li>
+          <li><a href="perito-coches-garraf.html">Garraf</a></li>
+          <li><a href="perito-coches-barcelones.html">Barcelonès</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="/#ejemplos">Ejemplos de informes</a></li>
+          <li><a href="/#contacto">Solicitar consulta</a></li>
+          <li><a href="acerca-de.html">Acerca de</a></li>
+          <li><a href="fichas-reducidas.html">Fichas reducidas</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="aviso-legal.html">Aviso legal</a></li>
+          <li><a href="privacidad.html">Política de privacidad</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span id="year"></span> JP Ingeniería y Peritaciones</div>
+      <div>Perito de valoración de vehículos</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ---- Configuración (rellenar antes de publicar) ----
+  var STRIPE_LINKS = { Normal: 'https://buy.stripe.com/fZubJ3cyN5kW9OM8gFgw001', Express: 'https://buy.stripe.com/aFa7sNcyNfZAd0YaoNgw002' };   // enlaces de pago de Stripe
+  var DRIVE_SCRIPT = 'https://script.google.com/macros/s/AKfycbyT1BK3UzIOIfq5QjHxITAMbcCNGeXanDmF2RxXt4LEndPtXmJP8CXtB7GTjlP5mSCE/exec';
+
+  var form = document.getElementById('frForm');
+  var status = document.getElementById('fr-status');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button[type=submit]');
+    btn.disabled = true; status.style.color = 'var(--muted)'; status.textContent = 'Enviando...';
+    var v = function(n){ return (form.elements[n] && form.elements[n].value) || ''; };
+    var drive = fetch(DRIVE_SCRIPT, { method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body: JSON.stringify({ nombre:v('nombre'), email:v('email'), vin:v('bastidor'), matricula:v('matricula'),
+        modalidad:form.querySelector('input[name=modalidad]:checked').value,
+        tipo:form.querySelector('input[name=tipo_vehiculo]:checked').value, botcheck:form.elements['botcheck'].checked }) })
+      .catch(function(){});
+    fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} })
+      .then(function(r){ return r.json(); })
+      .then(function(json){ return drive.then(function(){ return json; }); })
+      .then(function(json){
+        if (json.success){
+          var modalidad = form.querySelector('input[name=modalidad]:checked').value;
+          var link = STRIPE_LINKS[modalidad];
+          status.style.color = '#1a7f37'; status.textContent = '';
+          if (link){
+            document.getElementById('frPayBtn').href = link;
+            document.getElementById('frPay').style.display = 'block';
+          } else {
+            status.textContent = 'Solicitud enviada. Revisa tu email: te hemos enviado la carpeta para subir las fotos.';
+          }
+          form.reset();
+        } else { throw new Error(json.message); }
+      })
+      .catch(function(){
+        status.style.color = '#c0392b';
+        status.textContent = 'No se ha podido enviar. Escríbenos directamente a phpericial@gmail.com.';
+      })
+      .finally(function(){ btn.disabled = false; });
+  });
+</script>
+
+<script src="site.js"></script>
+</body>
+</html>
