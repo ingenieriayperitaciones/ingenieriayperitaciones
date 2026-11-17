@@ -175,7 +175,7 @@
       <fieldset>
         <legend>5. Documentación y fotografías</legend>
         <div class="fr-files">
-          <strong>Siempre se necesita (fotos en horizontal, nítidas y con todo legible):</strong>
+          <strong>Tras enviar la solicitud recibirás un email con una carpeta privada donde subir estas fotos (en horizontal, nítidas y con todo legible):</strong>
           <ul>
             <li><strong>Documentación del vehículo completa y legible</strong>: permiso de circulación y ficha técnica (ambas caras). En vehículos importados, la <strong>documentación completa del país de origen</strong>.</li>
             <li>DNI / NIE del titular</li>
@@ -186,8 +186,6 @@
             <li>Si lleva bola de remolque: la <strong>contraseña de homologación</strong> de la bola</li>
             <li>Todos los <strong>extras de fábrica</strong>: techo solar, accesorios camper, etc., con su homologación si la tienen</li>
           </ul>
-          <input id="archivos" name="attachment" type="file" multiple accept="image/*,application/pdf" style="margin:0;">
-          <div id="frFilesInfo" style="margin-top:8px;font-size:12.5px;color:var(--muted);"></div>
         </div>
         <p style="font-size:13px;color:var(--muted);">Las fotos deben ser nítidas y con todos los datos legibles; si no lo son, tendremos que pedírtelas de nuevo y el plazo se retrasará.</p>
       </fieldset>
@@ -200,7 +198,7 @@
       <p id="fr-status" style="margin-top:14px;font-size:14px;" role="status"></p>
 
       <div class="fr-pay" id="frPay">
-        <p style="margin-bottom:14px;"><strong>Solicitud recibida.</strong> Último paso: realiza el pago para que empecemos.</p>
+        <p style="margin-bottom:14px;"><strong>Solicitud recibida.</strong> Te hemos enviado un email con la carpeta donde subir las fotos (revisa también spam). Último paso: realiza el pago para que empecemos.</p>
         <a id="frPayBtn" class="btn btn-primary" href="#" rel="noopener">Pagar con tarjeta →</a>
       </div>
     </form>
@@ -269,32 +267,24 @@
 
   // ---- Configuración (rellenar antes de publicar) ----
   var STRIPE_LINKS = { Normal: 'https://buy.stripe.com/fZubJ3cyN5kW9OM8gFgw001', Express: 'https://buy.stripe.com/aFa7sNcyNfZAd0YaoNgw002' };   // enlaces de pago de Stripe
-  var MAX_TOTAL_MB = 5;                              // límite según plan de Web3Forms
+  var DRIVE_SCRIPT = 'https://script.google.com/macros/s/AKfycbyT1BK3UzIOIfq5QjHxITAMbcCNGeXanDmF2RxXt4LEndPtXmJP8CXtB7GTjlP5mSCE/exec';
 
   var form = document.getElementById('frForm');
   var status = document.getElementById('fr-status');
-  var files = document.getElementById('archivos');
-  var info = document.getElementById('frFilesInfo');
-
-  files.addEventListener('change', function(){
-    var total = 0; for (var i=0;i<files.files.length;i++) total += files.files[i].size;
-    var mb = (total/1048576).toFixed(1);
-    info.textContent = files.files.length ? files.files.length + ' archivo(s) · ' + mb + ' MB' : '';
-    info.style.color = (total/1048576 > MAX_TOTAL_MB) ? '#c0392b' : 'var(--muted)';
-  });
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
-    var total = 0; for (var i=0;i<files.files.length;i++) total += files.files[i].size;
-    if (total/1048576 > MAX_TOTAL_MB){
-      status.style.color = '#c0392b';
-      status.textContent = 'Los archivos superan ' + MAX_TOTAL_MB + ' MB. Reduce el tamaño o envíanos algunos por WhatsApp.';
-      return;
-    }
     var btn = form.querySelector('button[type=submit]');
     btn.disabled = true; status.style.color = 'var(--muted)'; status.textContent = 'Enviando...';
+    var v = function(n){ return (form.elements[n] && form.elements[n].value) || ''; };
+    var drive = fetch(DRIVE_SCRIPT, { method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body: JSON.stringify({ nombre:v('nombre'), email:v('email'), vin:v('bastidor'), matricula:v('matricula'),
+        modalidad:form.querySelector('input[name=modalidad]:checked').value,
+        tipo:form.querySelector('input[name=tipo_vehiculo]:checked').value, botcheck:form.elements['botcheck'].checked }) })
+      .catch(function(){});
     fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} })
       .then(function(r){ return r.json(); })
+      .then(function(json){ return drive.then(function(){ return json; }); })
       .then(function(json){
         if (json.success){
           var modalidad = form.querySelector('input[name=modalidad]:checked').value;
@@ -304,7 +294,7 @@
             document.getElementById('frPayBtn').href = link;
             document.getElementById('frPay').style.display = 'block';
           } else {
-            status.textContent = 'Solicitud enviada. Te escribiremos enseguida con el enlace de pago.';
+            status.textContent = 'Solicitud enviada. Revisa tu email: te hemos enviado la carpeta para subir las fotos.';
           }
           form.reset();
         } else { throw new Error(json.message); }
